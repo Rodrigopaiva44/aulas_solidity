@@ -1,0 +1,11 @@
+Solidity import 
+https://solidity-by-example.org/import/
+
+Solidity "new" keyword 
+https://docs.soliditylang.org/en/latest/control-structures.html#creating-contracts-via-new
+
+ABI
+https://docs.soliditylang.org/en/latest/abi-spec.html
+
+Inheritance/Override
+https://docs.soliditylang.org/en/latest/contracts.html#function-overriding

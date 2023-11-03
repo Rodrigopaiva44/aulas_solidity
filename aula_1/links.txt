@@ -1,0 +1,13 @@
+Language Description (Types)
+https://docs.soliditylang.org/en/v0.8.6/types.html
+
+
+Language Description ( Contracts, Visibility and Getter)
+https://docs.soliditylang.org/en/v0.7.3/contracts.html#visibility-and-getters
+
+Language Description (Layout of a Solidity Source File)
+https://docs.soliditylang.org/en/v0.6.8/layout-of-source-files.html
+
+
+(To find a faucet)
+docs.chain.link/docs/link-token-contracts
