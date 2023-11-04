@@ -22,7 +22,7 @@
       }
 
       function sfGet(uint256 _simpleStorageIndex) public view returns(uint256){
-            reuturn SimpleStorage(address(simpleStorageArray[_simpleStorageIndex])).get(); (better way) Question: Why?* 
+            reuturn SimpleStorage(address(simpleStorageArray[_simpleStorageIndex])).get();  
       }
 
   }
@@ -43,6 +43,6 @@
       }
 
       function sfGet(uint256 _simpleStorageIndex) public view returns(uint256){
-            reuturn SimpleStorage(address(simpleStorageArray[_simpleStorageIndex])).get(); (better way) Question: Why?* 
+            reuturn SimpleStorage(address(simpleStorageArray[_simpleStorageIndex])).get(); 
       }     
 }
