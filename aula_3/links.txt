@@ -1,0 +1,2 @@
+Global variables and more
+https://docs.soliditylang.org/en/latest/cheatsheet.html#global-variables

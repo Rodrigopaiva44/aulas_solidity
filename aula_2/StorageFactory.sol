@@ -2,15 +2,15 @@
 
   pragma solidity ^0.8.0;
 
-  import "./SimpleStorage.sol";
+  import {SimpleStorage} from "./SimpleStorage.sol";
 
   contract StorageFactory{
       SimpleStorage[] public simpleStorageArray;   
 
       // Creating a function that will create a new "SimpleStorage" contract
       function createSimpleStorageContract() public{
-        SimpleStorage simpleStorage = new SimpleStorage();
-        simpleStorageArray.push(simpleStorage); 
+        SimpleStorage mySimpleStorage = new SimpleStorage();
+        simpleStorageArray.push(mySimpleStorage); 
       }
 
       function sfStore(uint256 _simpleStorageIndex, uint256 _simplStorageNumber) public{
