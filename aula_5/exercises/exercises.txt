@@ -1,0 +1,20 @@
+
+Contrato de SimpleToken:
+Crie um contrato de token simples em que adicione uma função que permita apenas o proprietário do contrato mintar novos tokens.
+Os usuários devem ser capazes de transferir tokens entre endereços e consultar seus saldos. 
+
+Contrato Auction:
+Desenvolva um contrato em Solidity para um leilão simples.
+Crie funções para iniciar o leilão, permitir lances e encerrar o leilão. 
+Utilize lógica para garantir que somente o maior lance seja registrado e que o leilão só possa ser encerrado pelo administrador.
+
+Contrato Vote:
+Implemente um contrato de votação onde apenas os membros autorizados podem votar. 
+Utilize modificadores para controlar a visibilidade das funções
+Inclua condições para verificar se um membro já votou antes.
+
+Contrato Vending Machine:
+Crie uma máquina de vender donuts.
+Crie um modificador para que apenas o dono possa chamar a função "restock", na qual fara o reabastecimento de donuts.
+Desenvolva a função que permitirá os usuários comprar donuts e salve essas informações em um mapping.
+s
