@@ -21,7 +21,7 @@ contract ContratoVotacao {
         require(!votosRecebidos[msg.sender], "Voce ja votou.");
         require(_opcao == 0 || _opcao == 1, "Opcao invAlida. Escolha 0 ou 1.");
 
-        // Lógica de votação aqui...
+
         contagemVotos[_opcao]++;
 
         votosRecebidos[msg.sender] = true;

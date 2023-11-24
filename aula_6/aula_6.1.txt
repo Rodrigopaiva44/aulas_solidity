@@ -1,0 +1,70 @@
+
+-> Installing WSL (Linux terminal for Windows)
+	- You need at least 1903 version of Windows 10
+		- run (winver) on cmd to see the version
+	- Open cmd
+		- run (wsl --install -d Ubuntu)
+		- Reboot PC
+
+	- Make VSCode compatible by installing an extension
+		- Install "remote development" extension
+
+	- Create a new folder in Ubuntu shell
+		- run (mkdir solidity-course)
+		- run (cd solidity-course) -> (code .)
+-----------------------------------------------------------------
+-> Installing Foundry
+	- run (curl -L https://foundry.paradigm.xyz | bash)
+
+	- The following msg will appear:
+		- Detected your preferred shell is bash and added foundryup to PATH. Run 'source /home/digo/.bashrc' or start a new terminal session to use foundryup.
+
+	- run (forge --version) to make sure everythings is up to go
+		- If "forge --version" dont work run (echo "source /home/digo/.bashrc" >> .bash_profile)
+
+	- run (foundryup)
+
+	- to create a new project run (forge init) if returns an error run (forge init --force .)
+		- Maybe we will need to use git config to config our email and username
+
+	- More information here: https
+//book.getfoundry.sh/getting-started/installation
+-----------------------------------------------------------------
+-> Foundry-Simple-Storage
+	- copy SimpleStorage.sol and paste in src folder
+	
+	- install solidity theme on extension ( we can use hardhat extension )
+	- Install Even Better TOML extension
+
+-> Compile the contract
+	-> run (forge compile) to compile our code
+		- For this, we will need to delete all files inside (src/script/test) folders. Forced Error: Delete only in src file.
+
+	-> A new folder "out"
+	- Inside this folder we will have a SimpleStorage.json
+		- Read this .json and see the abi
+	- We will have a new folder called "cache" as well
+		- This one we just ignore
+
+-> Deploying the contract in a blockchain
+	-> run anvil
+		- Anvil is a tool such as forge that foundry system have that creates a blockchain to us.
+		- We could use Ganache as well. Exercise: Try to deploy in ganache blockchain
+	
+	-> To deploy a contract in anvil/ganache, we need to understand how remix deploy in testnets for example
+		- Remix always ask for metamask, which will have our private key, by our signatures.
+	- Open metamask settings -> networks
+		- Each blockchain have: a name, a RPC_URL, a chain ID etc...
+		- Everytime we are trying to interact with a blockchain (a.k.a ethereum mainnet) we are making an API CALL to the "rpc_url" url without having to run ourselfs
+	- Add a new network
+		- Name: Localhost A/G 
+		- New RPC_URL: Listening on: xxx / RPC Server: xxx
+		- Chain ID: Anvil: 31337 / Ganache : 1337 (metamask identify the chain ID)
+		- Currency symbol: ETH
+		- Block Explorer: We dont have
+	- Go back to anvil blockchain and add a new account to your metamask by yout private key
+
+	- Run (forge --help) to see all commands
+		- run (forge create --private-key xxx SimpleStorage) on Anvil or (forge create --private-key xxx --rpc-url xxx SimpleStorage) on Ganache
+	
+----------------------------------------------------------------

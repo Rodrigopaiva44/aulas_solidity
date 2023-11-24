@@ -1,0 +1,42 @@
+-> The second way to deploy a contract (Scripting)
+	-> We wanna have a continous/reproducible way to deploy our smart contracts
+		- # By writing a script that will deploy our code ( written on solidity)
+		- # Solidity as a scripting language vs solidity as a smart contract language
+	
+	-> Create a new file (DeploySimpleStorage.s.sol) - a foundry convetion
+		- #its not a contract that we want to deploy as others. Its just a script to deploy our SimpleStorage contract.
+	
+	- Foundry have a lib/forge-std folder that will have a bunch of scripts,test contracts and we can import to use it! (Script.sol)
+	
+		- Only on foundry we have the specific keyword (vm) ( vm.starBroadcast() ) - its a cheatcodes we can see it at (lib/src/Base.sol)
+
+		- Run (forge script scripts/DeploySimpleStorage.s.sol --rpc-url http://127.0.0.1:8545 --broadcast --private-key xxx)	
+			- It will create a new folder (broadcast/)
+------------------------------------------------------------------- -> What is a transaction?
+	- The JSON created, but signed for us.
+	- run-latest.json: 
+		- "type" : The merge 
+		"data": transaction bytecode  
+		"nonce": "0x1" 
+		(use "cast --to-base 0x1" to see the decimal number) 
+
+--------------------------------------------------------------------
+	-> Just a note(private key): Its not a good aproach to have our private key in plain text. So we can:
+		- Create a new file (.env) -> (PRIVATE_KEY=xxx RPC_URL= xxx)
+		- be sure our file (.env) its in (.gitignore) so git will ignore it
+
+	- There is anothe step ( a boring but important one ) 
+		- Foundry does not have a "encryptic" way to store private-keys. So we can use a method to make it by using
+		-https://github.com/foundry-rs/foundry/issues/3818
+	-> Summary: For now its ok to have .env file to store our private-keys as long as we dont show this file, commit or something.
+We must use --interactive or use "--keystore" file.
+--------------------------------------------------------------------
+-> Send a transaction
+	- run (cast --help) -> (cast send --help)
+		- We need some "Arguments" (TO, SIG, ARGS) 
+		- #In metamask we just need to put the number inside "store function" on SimpleStorage contract
+		- TO: Contract address ( the contract address) 
+		- SIG: "store(uint256)" ( the function we want call)
+		- ARGS: 123 (the number we want store)
+	
+	-> Run ( cast send (CONTRACT ADDRESS) "store(uin256)" 123 --rpc-url $RPC_URL --private-key $PRIVATE_KEY )
