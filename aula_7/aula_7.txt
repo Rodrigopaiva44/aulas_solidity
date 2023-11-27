@@ -1,0 +1,32 @@
+-> Foundry Fund-Me (lesson 7)
+
+-> Setup
+	- create a new folder called "foundry-fund-me"
+		- open in VSCode by running (code foundry-funde-me)
+	
+	- run (forge init) to initialize a new project
+
+-> Testing folder	
+	- run (forge test) 
+		- It will run the "Counter.t.sol" file and test it
+	
+	- Move "FundMe.sol/PriceConverter.sol" files from lesson 3 
+		- Try to compile it ("@chainlink/" only works in remix)
+
+	- we need to install it by running (forge install) BUT
+		- We always want to have --no-commit flag and @0.8.0(version) so run:
+(forge install smartcontractkit/chainlink-brownie-contracts@0.8.0 --no-commit)
+
+	-> Remapping
+	- In our "foundry.toml" file:
+		- create a new line ( remappings = ["@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/"] )
+        - its remapping the path
+-----------------------------------------------------------------------------------------------------------------------------
+-> Create "FundContract.t.sol" file in test folder
+	- "function setUp()" instead "function setup()" - but why? 
+	- import console - a print function Ex:( console.log("hi") )  
+	
+	- assertEq(fundContract.owner(), msg.sender) - give us an error because:
+		- us -> fundContractTest -> FundContract 
+		- The owner of FundContract is FundcontractTest, not us
+-----------------------------------------------------------------------------------------------------------------------------
