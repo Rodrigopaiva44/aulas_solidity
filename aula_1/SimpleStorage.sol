@@ -14,9 +14,11 @@ contract SimpleStorage{
         return number;
     }
     struct Person{
-        uint256 number;
+        uint256 num;
         string name;
     }
+
+    Person public abelha = Person({num: 10, name: "abelha"})
 
     Person[] public people; 
 
