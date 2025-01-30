@@ -9,7 +9,7 @@
 
       // Creating a function that will create a new "SimpleStorage" contract
       function createSimpleStorageContract() public{
-        SimpleStorage mySimpleStorage = new SimpleStorage();
+        SimpleStorage newSimpleStorage = new SimpleStorage();
         simpleStorageArray.push(mySimpleStorage); 
       }
 
@@ -17,12 +17,14 @@
             // Address 
             // ABI 
             
-            SimpleStorage simpleStorage = SimpleStorage(address(simpleStorageArray[_simpleStorageIndex]));
+            SimpleStorage mySimpleStorage = simpleStorageArray[_simpleStorageIndex];
             simpleStorage.store(_simplStorageNumber);
       }
 
       function sfGet(uint256 _simpleStorageIndex) public view returns(uint256){
-            reuturn SimpleStorage(address(simpleStorageArray[_simpleStorageIndex])).get();  
+            SimpleStorage mySimpleStorage = simpleStorageArray[_simpleStorageIndex];
+            return mySimpleStorage.get();
+            //return simpleStorageArray[_simpleStorageIndex].get(); 
       }
 
   }
