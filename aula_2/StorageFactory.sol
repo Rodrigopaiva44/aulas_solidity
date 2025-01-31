@@ -45,6 +45,6 @@
       }
 
       function sfGet(uint256 _simpleStorageIndex) public view returns(uint256){
-            reuturn SimpleStorage(address(simpleStorageArray[_simpleStorageIndex])).get(); 
+            return SimpleStorage(address(simpleStorageArray[_simpleStorageIndex])).get(); 
       }     
 }
