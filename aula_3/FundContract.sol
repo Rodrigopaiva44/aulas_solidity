@@ -31,7 +31,7 @@ contract FundContract{
         }
 
         funders = new address[](0);
-        // tansact
+        // transact
         // send
         // call 
         (bool callSucess,) = payable(msg.sender).call{value: address(this).balance}("");
